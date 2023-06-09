@@ -145,7 +145,7 @@ initial Qbar=1;
 always @(posedge clk)
 begin
   Q=(T&(~Q))|((~T)&Q);
-  Qbar=((~T)&Qbar)|(T&(~Qbar));
+  Qbar=~Q;
 end
 endmodule
 
@@ -160,7 +160,7 @@ initial Qbar=1;
 always @(posedge clk)
 begin
  Q=D;
- Qbar=~D;
+ Qbar=~Q;
 end
 endmodule
 
@@ -175,7 +175,7 @@ initial Qbar=1;
 always @(posedge clk)
 begin
  Q=(J&(~Q))|((~K)&Q);
- Qbar=((~J)&(Qbar))|K&(~Qbar);
+ Qbar=~Q;
 end
 endmodule
 ```
